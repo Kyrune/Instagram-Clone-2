@@ -6,6 +6,7 @@
 .pnp.js
 seed.js
 notes.txt
+src/lib/firebase.js
 
 # testing
 /coverage
