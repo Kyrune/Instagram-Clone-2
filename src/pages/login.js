@@ -11,9 +11,13 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
+    // Check if password and email address exist
     const isInvalid = password === '' || emailAddress === '';
+
+    // Login handler
     const handleLogin = () => {}
 
+    // useEffect
     useEffect(() => {
         document.title = 'title - Instagram';
     }, []);
