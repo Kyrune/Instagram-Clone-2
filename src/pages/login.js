@@ -1,6 +1,7 @@
 import { useHistory } from "react-router";
 import { useState, useContext, useEffect } from 'react';
 import FirebaseContext from '../context/firebase';
+import { Link } from "react-router-dom";
 
 export default function Login() {
     const history = useHistory();
@@ -62,6 +63,9 @@ export default function Login() {
                 <div className="flex justify-center items-center flex-col w-full bg-white p-4 border border-gray-primary">
                     <p className="text-sm">
                         Don't have an account?{` `}
+                        <Link to="/signup" className="font-bold text-bold text-blue-medium">
+                            Sign Up
+                        </Link>
                     </p>
                 </div>
             </div>
