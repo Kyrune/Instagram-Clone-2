@@ -39,7 +39,8 @@ export default function Login() {
                         aria-label="Enter your email address"
                         type="text"
                         placeholder="Email address"
-                        className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2"
+                        className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2"
+                        onChange={({ target }) => console.log(target.value)}
                     />
                 </form>
             </div>
