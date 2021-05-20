@@ -31,7 +31,17 @@ export default function Login() {
                 <h1 className="flex justify-center w-full">
                     <img src="/images/logo.png" alt="Instagram" className="mt-2 w-6/12 mb-4" />
                 </h1>
+
                 {error && <p className="mb-4 text-xs text-red-primary"></p>}
+
+                <form onSubmit={handleLogin} method="POST">
+                    <input 
+                        aria-label="Enter your email address"
+                        type="text"
+                        placeholder="Email address"
+                        className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2"
+                    />
+                </form>
             </div>
         </div>
     );
