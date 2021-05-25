@@ -18,7 +18,17 @@ export default function Login() {
 
     // Login handler
     const handleLogin = async (event) => {
+        event.preventDefault();
 
+        try {
+            await firebase.auth().signInWithEmailAndPassword(emailAddress, password);
+            history.push(ROUTES.DASHBOARD);
+        } catch (error) {
+            // Clears form
+            setEmailAddress('');
+            setPassword('');
+            setError(error.message);
+        }
     };
 
     // useEffect
@@ -59,7 +69,7 @@ export default function Login() {
                             type="submit"
                             className={`bg-blue-medium text-white w-full rounded h-8 font-bold ${isInvalid && 'opacity-50'}`}
                         >
-                            Login
+                            Log In
                         </button>
                     </form>
                 </div>
