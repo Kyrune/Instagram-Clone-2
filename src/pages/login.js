@@ -2,6 +2,7 @@ import { useHistory } from "react-router";
 import { useState, useContext, useEffect } from 'react';
 import FirebaseContext from '../context/firebase';
 import { Link } from "react-router-dom";
+import * as ROUTES from '../constants/routes';
 
 export default function Login() {
     const history = useHistory();
@@ -16,7 +17,9 @@ export default function Login() {
     const isInvalid = password === '' || emailAddress === '';
 
     // Login handler
-    const handleLogin = () => {}
+    const handleLogin = async (event) => {
+
+    };
 
     // useEffect
     useEffect(() => {
@@ -72,5 +75,3 @@ export default function Login() {
         </div>
     );
 }
-
-// TODO: add bg-blue-medium to Tailwind config
