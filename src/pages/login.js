@@ -54,7 +54,7 @@ export default function Login() {
                         <button 
                             disabled={isInvalid}
                             type="submit"
-                            className={`bg-blue-500 text-white w-full rounded h-8 font-bold ${isInvalid && 'opacity-50'}`}
+                            className={`bg-blue-medium text-white w-full rounded h-8 font-bold ${isInvalid && 'opacity-50'}`}
                         >
                             Login
                         </button>
