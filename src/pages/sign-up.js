@@ -33,7 +33,14 @@ export default function SignUp() {
                     displayName: username
                 });
 
-                
+                await firebase.firestore().collection('users').add({
+                    userId: createdUserResult.user.uid,
+                    username: username.toLowerCase(),
+                    fullName,
+                    emailAddress: emailAddress.toLowerCase(),
+                    following: [],
+                    dateCreated: Date.now()
+                });
             } catch (error) {
 
             }
