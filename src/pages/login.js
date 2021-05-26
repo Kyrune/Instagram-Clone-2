@@ -32,7 +32,7 @@ export default function Login() {
 
     // useEffect
     useEffect(() => {
-        document.title = 'title - Instagram';
+        document.title = 'Login - Instagram';
     }, []);
 
     return (
