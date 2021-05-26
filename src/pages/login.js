@@ -1,7 +1,6 @@
-import { useHistory } from "react-router";
+import { Link, useHistory } from "react-router-dom";
 import { useState, useContext, useEffect } from 'react';
 import FirebaseContext from '../context/firebase';
-import { Link } from "react-router-dom";
 import * as ROUTES from '../constants/routes';
 
 export default function Login() {
@@ -71,7 +70,7 @@ export default function Login() {
                             type="submit"
                             className={`bg-blue-medium text-white w-full rounded h-8 font-bold ${isInvalid && 'opacity-50'}`}
                         >
-                            Log In
+                            Login
                         </button>
                     </form>
                 </div>
