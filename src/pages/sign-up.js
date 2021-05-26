@@ -23,7 +23,7 @@ export default function SignUp() {
         event.preventDefault();
 
         const usernameExists = await doesUsernameExist(username);
-        if (usernameExists) {
+        if (!usernameExists) {
             try {
                 const createdUserResult = await firebase
                 .auth()
@@ -44,7 +44,10 @@ export default function SignUp() {
 
                 history.push(ROUTES.DASHBOARD);
             } catch (error) {
-
+                setFullName('');
+                setEmailAddress('');
+                setPassword('');
+                setError(error.message);
             }
         }
     };
