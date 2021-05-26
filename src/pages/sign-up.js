@@ -41,6 +41,8 @@ export default function SignUp() {
                     following: [],
                     dateCreated: Date.now()
                 });
+
+                history.push(ROUTES.DASHBOARD);
             } catch (error) {
 
             }
