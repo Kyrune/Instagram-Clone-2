@@ -23,16 +23,19 @@ export default function SignUp() {
         event.preventDefault();
 
         const usernameExists = await doesUsernameExist(username);
-        if (!usernameExists) {
+        // console.log('usernameExists', usernameExists);
+        if (!usernameExists.length) {
             try {
                 const createdUserResult = await firebase
                 .auth()
                 .createUserWithEmailAndPassword(emailAddress, password)
 
+                // Authentication
                 await createdUserResult.user.updateProfile({
                     displayName: username
                 });
 
+                // Firebase user collection creates a doc
                 await firebase.firestore().collection('users').add({
                     userId: createdUserResult.user.uid,
                     username: username.toLowerCase(),
@@ -48,7 +51,10 @@ export default function SignUp() {
                 setEmailAddress('');
                 setPassword('');
                 setError(error.message);
+                // console.log(error.message);
             }
+        } else {
+            setError('That username is already taken, please try another.')
         }
     };
 
@@ -116,7 +122,7 @@ export default function SignUp() {
                     <p className="text-sm">
                         Have an account?{` `}
                         <Link to={ROUTES.LOGIN} className="font-bold text-bold text-blue-medium">
-                            Log In
+                            Login
                         </Link>
                     </p>
                 </div>
