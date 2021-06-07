@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import useAuthListener from './hooks/use-auth-listener';
 import * as ROUTES from './constants/routes';
 
 const Login = lazy(() => import ('./pages/login'));
@@ -8,6 +9,8 @@ const Dashboard = lazy(() => import('./pages/dashboard'));
 const NotFound = lazy(() => import('./pages/not-found'));
 
 export default function App() {
+  const { user } = useAuthListener();
+  
   return (
     <Router>
       <Suspense fallback={<p>Loading...</p>}>
