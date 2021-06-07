@@ -18,7 +18,7 @@ export default function SignUp() {
     // Check if password and email address exist
     const isInvalid = password === '' || emailAddress === '';
 
-    // Login handler
+    // Sign Up handler - requires services/firebase.js
     const handleSignUp = async (event) => {
         event.preventDefault();
 
