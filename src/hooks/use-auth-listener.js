@@ -16,6 +16,9 @@ export default function useAuthListener() {
                 setUser(null);
             }
         });
+
+        // Cleanup
+        return () => listener();
     }, [firebase]);
 
     return { user };
