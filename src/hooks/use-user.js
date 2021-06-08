@@ -6,10 +6,10 @@ export default function useUser() {
     const [activeUser, setActiveUser] = useState({});
     const { user } = useContext(UserContext);
     
-    // Function calls firebase service to get user data based on ID
     useEffect(() => {
+        // Function calls firebase service to get user data based on ID
         async function getUserObjByUserId() {
-            const response = await getUserByUserId(user.uid);
+            const [response] = await getUserByUserId(user.uid);
             setActiveUser(response);
         }
         if (user?.uid) {
