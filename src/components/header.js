@@ -14,6 +14,7 @@ export default function Header() {
                 <div className="flex justify-between h-full">
                     <div className="text-gray-700 text-center flex items-center align-items cursor-pointer">
                         <h1 className="flex justify-center w-full">
+                            {/* Link to Dashboard with Instagram logo */}
                             <Link to={ROUTES.DASHBOARD} aria-label="Instagram logo">
                                 <img src="/images/logo.png" alt="Instagram" className="mt-2 w-6/12" />
                             </Link>
@@ -21,8 +22,10 @@ export default function Header() {
                     </div>
                     <div className="text-gray-700 text-center flex items-center align-items">
                         {user ? (
+                            // Link to Dashboard icon
                             <>
                                 <Link to ={ROUTES.DASHBOARD} aria-label="Dashboard">
+                                    {/* Dashboard icon */}
                                     <svg
                                         className="w-8 mr-6 text-black-light cursor-pointer"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -39,6 +42,7 @@ export default function Header() {
                                     </svg>
                                 </Link>
 
+                                {/* Button to Sign Out with icon */}
                                 <button
                                     type="button"
                                     title="Sign Out"
@@ -49,6 +53,7 @@ export default function Header() {
                                         }
                                     }}
                                 >
+                                    {/* Sign Out icon */}
                                      <svg
                                         className="w-8 mr-6 text-black-light cursor-pointer"
                                         xmlns="http://www.w3.org/2000/svg"
