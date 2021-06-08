@@ -85,6 +85,9 @@ export default function Header() {
                                 <Link to={ROUTES.LOGIN}>
                                     <button type="button">Log In</button>
                                 </Link>
+                                <Link to={ROUTES.SIGN_UP}>
+                                    <button type="button">Sign Up</button>
+                                </Link>
                             </>
                         )
                     }
