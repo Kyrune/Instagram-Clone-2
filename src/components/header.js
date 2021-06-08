@@ -82,6 +82,9 @@ export default function Header() {
                             </>
                         ) : (
                             <>
+                                <Link to={ROUTES.LOGIN}>
+                                    <button type="button">Log In</button>
+                                </Link>
                             </>
                         )
                     }
