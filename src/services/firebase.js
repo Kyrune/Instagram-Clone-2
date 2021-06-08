@@ -1,5 +1,6 @@
 import { firebase, FieldValue } from '../lib/firebase';
 
+// Checks if Username exists
 export async function doesUsernameExist(username) {
     const result = await firebase   
         .firestore()
@@ -12,6 +13,7 @@ export async function doesUsernameExist(username) {
         return result.docs.map((user) => user.data().length > 0);
 };
 
+// Get user by the ID
 export async function getUserByUserId(userId) {
     const result = await firebase
         .firestore()
