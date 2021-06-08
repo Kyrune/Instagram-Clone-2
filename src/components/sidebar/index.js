@@ -10,8 +10,8 @@ export default function Sidebar() {
     // console.log('user', user);
     return (
         <div className="p-4">
-            <User />
-            <Suggestions />
+            <User username={username} fullName={fullName} />
+            <Suggestions userId={userId} />
         </div>
     );
 }
