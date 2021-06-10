@@ -3,7 +3,7 @@ import User from './user';
 import Suggestions from './suggestions';
 
 export default function Sidebar() {
-    // Ensures only users NOT being followed by User show up in Suggestions
+    // Hook ensures only users NOT being followed by User show up in Suggestions
     const { 
         user: { fullName, username, userId } 
     } = useUser();
