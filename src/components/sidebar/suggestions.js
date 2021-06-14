@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import PropTypes from 'prop-types';
+import { getSuggestedProfiles } from '../../services/firebase';
 
 export default function Suggestions({ userId }) {
     const [profiles, setProfiles] = useState(null);
@@ -12,7 +13,9 @@ export default function Suggestions({ userId }) {
             const response = await getSuggestProfiles(userId);
             setProfiles(response);
         }
+
         console.log('userId', userId);
+        suggestedProfiles();
     }, [userId]);
 
     return !profiles ? (
