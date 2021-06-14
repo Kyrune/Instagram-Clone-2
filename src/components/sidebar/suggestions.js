@@ -14,8 +14,10 @@ export default function Suggestions({ userId }) {
             setProfiles(response);
         }
 
-        console.log('userId', userId);
-        suggestedProfiles();
+        // console.log('userId', userId);
+        if (userId) {
+            suggestedProfiles();
+        }
     }, [userId]);
 
     return !profiles ? (
