@@ -36,7 +36,7 @@ export async function getSuggestedProfiles(userId) {
         .limit(10)
         .get();
 
-        console.log(result);
+        // console.log(result);
 
         return result;
 }
