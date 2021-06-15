@@ -29,6 +29,7 @@ export async function getUserByUserId(userId) {
         return user;
 }
 
+// Gets a list of 10 suggested profiles for user
 export async function getSuggestedProfiles(userId) {
     const result = await firebase
         .firestore()
