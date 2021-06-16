@@ -62,6 +62,7 @@ export async function updateLoggedInUserFollowing(
         });
 }
 
+// Update other user's followers array (basically a switch)
 export async function updateFollowedUserFollowers(
     profileDocId, // Passes in currently logged in user document id (user's profile)
     loggedInUserDocId, // The user that current user requests to follow
