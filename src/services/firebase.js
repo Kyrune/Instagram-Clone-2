@@ -38,7 +38,7 @@ export async function getSuggestedProfiles(userId, following) {
         .get();
 
         // console.log(result);
-
+        
         // Get list of users, but ensure current user's profile and already followed users aren't listed. 
         return result.docs
             .map((user) => ({ ...user.data(), docId: user.id }))
