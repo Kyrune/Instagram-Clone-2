@@ -45,10 +45,11 @@ export async function getSuggestedProfiles(userId, following) {
             .filter((profile) => profile.userId !== userId && !following.includes(profile.userId));
 }
 
+// Updates list of suggested users if current user follows
 export async function updateLoggedInUserFollowing(
-    loggedInUserDocId, 
-    profileId, 
-    isFollowingProfile 
+    loggedInUserDocId, // Passes in currently logged in user document id (user's profile)
+    profileId, // The user that current user requests to follow
+    isFollowingProfile // True/false - is current user following this user?
     ) {
     return firebase
         .firestore()
