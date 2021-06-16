@@ -26,7 +26,4 @@ export default function User({ username, fullName }) {
 User.propTypes = {
     username: PropTypes.string,
     fullName: PropTypes.string,
-    // test: PropTypes.number
 };
-
-// User.whyDidYouRender = true;

@@ -23,5 +23,3 @@ const Sidebar = () => {
 };
 
 export default memo(Sidebar);
-
-// Sidebar.whyDidYouRender = true
