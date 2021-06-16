@@ -15,7 +15,7 @@ export default function SuggestedProfile({
     async function handleFollowUser() {
         setFollowed(true);
 
-        // Update the following array of the logged in user (aka, my profile)
+        // Update the following array of the logged in user
         await updateLoggedInUserFollowing(loggedInUserDocId, profileId);
         // Update the followers array of the user who has been followed
         await updateFollowedUserFollowers(profileDocId, userId, false);
