@@ -17,6 +17,13 @@ export default function SuggestedProfile({ userDocId, username, profileId, userI
                     <p className="font-bold text-sm">{username}</p>
                 </Link>
             </div>
+                <button
+                    className="text-xs font-bold text-blue-medium"
+                    type="button"
+                    onClick={() => console.log('Follow this user')}
+                >
+                    Follow
+                </button>
         </div>
     ) : null;
 }
