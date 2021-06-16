@@ -15,14 +15,12 @@ export default function Suggestions({ userId, following }) {
             setProfiles(response);
         }
 
-        // 5:04:36 issue
-
         // console.log('userId', userId);
         if (userId) {
             suggestedProfiles();
         }
 
-        console.log('profiles', profiles);
+        // console.log('profiles', profiles);
     }, [userId]);
 
     return !profiles ? (
