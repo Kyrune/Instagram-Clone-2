@@ -8,14 +8,14 @@ import Suggestions from './suggestions';
 const Sidebar = () => {
     // Hook ensures only users NOT being followed by User show up in Suggestions
     const { 
-        user: { fullName, username, userId } 
+        user: { fullName, username, userId, following } 
     } = useUser();
 
     // console.log('user', user);
     return (
         <div className="p-4">
             <User username={username} fullName={fullName} />
-            <Suggestions userId={userId} />
+            <Suggestions userId={userId} following={following} />
         </div>
     );
 };
