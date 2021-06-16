@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export default function SuggestedProfile({ userDocId, username, profileId, userId }) {
@@ -12,6 +13,9 @@ export default function SuggestedProfile({ userDocId, username, profileId, userI
                     src={`/images/avatars/${username}.jpg`}
                     alt=""
                 />
+                <Link to={`/p/${username}`}>
+                    <p className="font-bold text-sm">{username}</p>
+                </Link>
             </div>
         </div>
     ) : null;
