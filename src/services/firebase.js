@@ -78,3 +78,11 @@ export async function updateFollowedUserFollowers(
                 : FieldValue.arrayUnion(loggedInUserDocId)
         });
 }
+
+export async function getPhotos(userId, following) {
+    const result = await firebase
+        .firestore()
+        .collection('photos')
+        .where('userId', 'in', following)
+        .get();
+}
