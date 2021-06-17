@@ -10,16 +10,21 @@ export default function usePhotoes() {
 
     useEffect(() => {
         async function getTimeLinePhotos() {
-            const { following } = await getUserByUserId(userId);
+            const [{ following }] = await getUserByUserId(userId);
             let followedUserPhotos = [];
+
+            // console.log('following', following);
 
             // Is the user following people?
             if (following.length > 0) {
                 followedUserPhotos = await getPhotos(userId, following);
             }
+           
         }
 
-        console.log(userId);
+        // console.log('userId', userId);
+
+        getTimeLinePhotos();
     }, []);
 
     return { photos };
