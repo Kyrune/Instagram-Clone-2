@@ -21,12 +21,13 @@ export default function usePhotoes() {
             }
             // Arranges photos so the newest is at the top
             followedUserPhotos.sort((a, b) => b.dateCreated - a.dateCreated);
+            setPhotos(followedUserPhotos);
         }
 
         // console.log('userId', userId);
 
         getTimeLinePhotos();
-    }, []);
+    }, [userId]);
 
     return { photos };
 }
