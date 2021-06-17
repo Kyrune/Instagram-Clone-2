@@ -19,7 +19,8 @@ export default function usePhotoes() {
             if (following.length > 0) {
                 followedUserPhotos = await getPhotos(userId, following);
             }
-           
+            // Arranges photos so the newest is at the top
+            followedUserPhotos.sort((a, b) => b.dateCreated - a.dateCreated);
         }
 
         // console.log('userId', userId);
