@@ -16,3 +16,7 @@ export default function Header({ username }) {
         </div>
     );
 }
+
+Header.propTypes = {
+    username: PropTypes.string.isRequired
+}
