@@ -5,7 +5,10 @@ import Image from './image';
 import Actions from './actions';
 
 export default function Post({ content }) {
-    console.log('content', content);
+    // console.log('content', content);
+    const commentInput = useRef(null);
+
+    const handleFocus = () => commentInput.current.focus();
 
     return (
         <div className="rounded col-span-4 border bg-white border-gray-primary mb-12">
