@@ -15,5 +15,13 @@ export default function Actions({ docId, totalLikes, likedPhoto, handleFocus }) 
     // Switch toggle Likes
     const handleToggleLiked = async () => {
         setToggledLiked((toggleLiked) => !toggleLiked);
+
+        await firebase
+            .firestore()
+            .collection('photos')
+            .doc(docId)
+            .update({
+                likes: toggleLiked ? FieldValue.arrayRemove(userId) : FieldValue.arrayUnion(userId)
+            });
     };
 }
